@@ -1,10 +1,10 @@
 {
     "skip_files": [
-        "lib/pipeline_ci/application.ex",
-        "lib/pipeline_ci_web.ex",
-        "lib/pipeline_ci_web/telemetry.ex",
-        "lib/pipeline_ci_web/router.ex",
-        "lib/pipeline_ci_web/views/error_helpers.ex",
+        "lib/food_order/application.ex",
+        "lib/food_order_web.ex",
+        "lib/food_order_web/telemetry.ex",
+        "lib/food_order_web/router.ex",
+        "lib/food_order_web/views/error_helpers.ex",
         "test/support/data_case.ex"
     ],
     "coverage_options": {

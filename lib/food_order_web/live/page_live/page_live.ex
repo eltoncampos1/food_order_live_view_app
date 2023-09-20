@@ -3,7 +3,7 @@ defmodule FoodOrderWeb.PageLive do
 
   def render(assigns) do
     ~H"""
-      hiii
+    <h1>hi</h1>
     """
   end
 end

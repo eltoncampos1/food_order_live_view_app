@@ -25,14 +25,15 @@ defmodule FoodOrder.ProductsTest do
         description: "some description",
         name: "some name",
         price: 42,
-        size: "some size"
+        size: :SMALL,
+        image_url: "image.png"
       }
 
       assert {:ok, %Product{} = product} = Products.create_product(valid_attrs)
       assert product.description == "some description"
       assert product.name == "some name"
-      assert product.price == 42
-      assert product.size == "some size"
+      assert product.price == Money.new(42)
+      assert product.size == :SMALL
     end
 
     test "create_product/1 with invalid data returns error changeset" do
@@ -46,17 +47,18 @@ defmodule FoodOrder.ProductsTest do
         description: "some updated description",
         name: "some updated name",
         price: 43,
-        size: "some updated size"
+        size: :SMALL,
+        image_url: "image.png"
       }
 
       assert {:ok, %Product{} = product} = Products.update_product(product, update_attrs)
       assert product.description == "some updated description"
       assert product.name == "some updated name"
-      assert product.price == 43
-      assert product.size == "some updated size"
+      assert product.price == Money.new(43)
+      assert product.size == :SMALL
     end
 
-    test "update_product/2 with invalid data returns error changeset" do
+    test "update_product/2 with invalid data returns  changeset" do
       product = product_fixture()
       assert {:error, %Ecto.Changeset{}} = Products.update_product(product, @invalid_attrs)
       assert product == Products.get_product!(product.id)

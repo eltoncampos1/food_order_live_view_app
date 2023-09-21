@@ -8,25 +8,37 @@
     <div
       :for={_ <- 1..4}
       class="flex items-center my-8 shadow-lg p-2 hover:bg-neutral-100 transition-colors"
+      data-role="item"
     >
-      <img src={~p"/images/product_1.webp"} alt="product" class="h-16 w-16 rounded-full" />
+      <img
+        data-role="item-image"
+        src={~p"/images/product_1.webp"}
+        alt="product"
+        class="h-16 w-16 rounded-full"
+      />
       <div class="flex-1 ml-4">
         <h1>Pizza</h1>
         <span>Small</span>
       </div>
 
-      <div class="flex-1">
+      <div class="flex-1" data-role="quantity">
         <div class="flex items-center">
-          <button class="py-1 px-3 m-2 rounded-full text-white font-bold bg-orange-500 hover:bg-orange-600 transition-colors">
+          <button
+            data-role="dec"
+            class="py-1 px-3 m-2 rounded-full text-white font-bold bg-orange-500 hover:bg-orange-600 transition-colors"
+          >
             -
           </button>
           <span>10 Item(s)</span>
-          <button class="py-1 px-3 m-2 rounded-full text-white font-bold bg-orange-500 hover:bg-orange-600 transition-colors">
+          <button
+            data-role="add"
+            class="py-1 px-3 m-2 rounded-full text-white font-bold bg-orange-500 hover:bg-orange-600 transition-colors"
+          >
             +
           </button>
         </div>
       </div>
-      <div class="flex-1 flex items-center gap-3">
+      <div class="flex-1 flex items-center gap-3" data-role="total-item">
         <span class="font-bold text-lg">$10</span>
         <button class="w-6 h-6 rounded-full text-white font-bold bg-orange-500 hover:bg-orange-600 transition-colors">
           &times
@@ -37,7 +49,7 @@
 
   <hr />
 
-  <div class="text-right py-4">
+  <div class="text-right py-4" data-role="total-cart">
     <div>
       <span class="text-lg">Total amount</span>
       <span class="text-2xl font-bold ml-2">$1000</span>

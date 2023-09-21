@@ -60,7 +60,8 @@ defmodule FoodOrder.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:excoveralls, "~> 0.10", only: :test},
-      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:money, "~> 1.12"}
     ]
   end
 

@@ -13,8 +13,9 @@ defmodule FoodOrder.ProductsFixtures do
       |> Enum.into(%{
         description: "some description",
         name: "some name",
-        price: 42,
-        size: "some size"
+        price: 400,
+        size: :SMALL,
+        image_url: "image.png"
       })
       |> FoodOrder.Products.create_product()
 

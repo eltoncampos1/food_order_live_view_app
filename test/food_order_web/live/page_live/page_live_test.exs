@@ -42,8 +42,11 @@ defmodule FoodOrderWeb.PageLiveTest do
 
     assert has_element?(
              view,
-             "[data-role=item-details][data-id=#{product.id}]>div>span", Money.to_string(product.price))
+             "[data-role=item-details][data-id=#{product.id}]>div>span",
+             Money.to_string(product.price)
+           )
 
-    assert view |> element("[data-role=item-details][data-id=#{product.id}]>div>button") |> render =~ "add"
+    assert view |> element("[data-role=item-details][data-id=#{product.id}]>div>button") |> render =~
+             "add"
   end
 end

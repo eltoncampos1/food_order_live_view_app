@@ -3,7 +3,7 @@ defmodule FoodOrder.Products.Product do
   import Ecto.Changeset
 
   @sizes ~w/SMALL MEDIUM LARGE/a
-  @required  [:name, :price, :size, :description, :image_url]
+  @required [:name, :price, :size, :description, :image_url]
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "products" do

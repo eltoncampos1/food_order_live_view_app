@@ -1,5 +1,7 @@
 defmodule FoodOrderWeb.PageLive do
   use FoodOrderWeb, :live_view
+
+  alias FoodOrderWeb.PageLive.Item
   alias FoodOrder.Products
 
   def mount(_, _, socket) do

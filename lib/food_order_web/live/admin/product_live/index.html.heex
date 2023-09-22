@@ -1,4 +1,9 @@
-<.header>List Products</.header>
+<.header>
+  List Products
+  <:actions>
+    <.link patch={~p"/admin/products/new"}>New product</.link>
+  </:actions>
+</.header>
 <.table id="products" rows={@products}>
   <:col :let={product} label="name">
     <%= product.name %>
@@ -10,3 +15,7 @@
     <%= product.size %>
   </:col>
 </.table>
+
+<.modal :if={@live_action == :new} id="new-product-modal">
+hi
+</.modal>

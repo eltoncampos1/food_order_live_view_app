@@ -17,6 +17,14 @@ defmodule FoodOrderWeb.Admin.ProductLive.IndexTest do
       assert has_element?(view, table_row, product.size |> to_string())
       assert has_element?(view, table_row, Money.to_string(product.price))
     end
+
+    test "add new product", %{conn: conn} do
+      {:ok, view, _html} = live(conn, ~p"/admin/products")
+      assert view |> element("header>div>a", "New product") |> render_click()
+      assert_patch(view, ~p"/admin/products/new")
+
+      assert view |> has_element?("#new-product-modal")
+    end
   end
 
   def create_product(_) do

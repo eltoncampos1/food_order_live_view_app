@@ -21,7 +21,7 @@ defmodule FoodOrderWeb.Router do
     live "/cart", CartLive, :home
 
     scope "/admin", Admin do
-     live "/products", ProductLive.Index, :index
+      live "/products", ProductLive.Index, :index
     end
   end
 

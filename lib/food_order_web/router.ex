@@ -19,6 +19,10 @@ defmodule FoodOrderWeb.Router do
 
     live "/", PageLive, :home
     live "/cart", CartLive, :home
+
+    scope "/admin", Admin do
+     live "/products", ProductLive.Index, :index
+    end
   end
 
   # Other scopes may use custom stacks.
